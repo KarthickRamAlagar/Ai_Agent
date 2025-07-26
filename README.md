@@ -17,7 +17,7 @@
   <p>
 Karthickeyan's AI Agent is a modern, AI-driven portfolio assistant built with <strong>Next.js</strong>, integrating <strong>LangChain</strong>, <strong>OpenAI</strong>, and <strong>Google Generative AI</strong> for intelligent conversations, content generation, and dynamic UI rendering.
   </p>
- <p><a href="https://karthickramalagaraiagent.vercel.app/" target="_blank"><strong>Live Demo</strong></a></p>
+ <p><a href="https://karthickaiagent.vercel.app/" target="_blank"><strong>Live Demo</strong></a></p>
 
 </div>
 
