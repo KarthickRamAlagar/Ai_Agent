@@ -6,62 +6,87 @@ export async function POST(req) {
     const { messages } = await req.json();
     const latestMessage = messages.at(-1)?.content ?? "";
 
-    // Initialize Gemini
+    // ✅ Initialize Gemini
     const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
     const embedModel = genAI.getGenerativeModel({ model: "embedding-001" });
     const chatModel = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-    // Generate embedding for the user query
+    // ✅ Generate embedding
     const embedResult = await embedModel.embedContent(latestMessage);
-    const userEmbedding = embedResult.embedding.values; // should be length 768
+    const userEmbedding = embedResult.embedding.values;
 
-    // Connect to Astra DB
+    // ✅ Astra DB
     const client = new DataAPIClient(process.env.ASTRA_DB_APPLICATION_TOKEN);
     const db = client.db(process.env.ASTRA_DB_API_ENDPOINT, {
       keyspace: process.env.ASTRA_DB_NAMESPACE,
     });
     const collection = db.collection("portfolio");
 
-    //  Perform vector search for relevant context
+    // ✅ Vector Search
     const cursor = collection.find(null, {
       sort: { $vector: userEmbedding },
       limit: 5,
     });
-
     const documents = await cursor.toArray();
-    const docContext = `
-      START CONTEXT
-      ${documents.map((doc) => `• ${doc.info}: ${doc.description}`).join("\n")}
-      END CONTEXT
-      `;
 
-    //  Build system + user prompt
+    const docContext =
+      documents.length > 0
+        ? `START CONTEXT\n${documents
+            .map((doc) => `• ${doc.info}: ${doc.description}`)
+            .join("\n")}\nEND CONTEXT`
+        : "(No relevant vector data found)";
+
     const systemPrompt = `
-      You are an AI assistant answering questions as Karthick RamAlagar in his AI Portfolio App.
+      You are an AI assistant answering as Karthick RamAlagar in his AI Portfolio App.
       Use the following context to answer:
       ${docContext}
-      If the answer is not in the context, respond with:
+      If the answer is not in the context, respond:
       "There is no vector data available to answer your question."
-      Format responses using markdown for readability.
-      `;
-
-    const fullPrompt = `
-    ${systemPrompt}
-
-    User Question:
-    ${latestMessage}
+      Format responses in markdown.
     `;
 
-    // Generate response from Gemini
-    const result = await chatModel.generateContent(fullPrompt);
-    const responseText = result.response.text();
+    const fullPrompt = `${systemPrompt}\n\nUser Question:\n${latestMessage}`;
 
-    return new Response(JSON.stringify({ output: responseText }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    try {
+      // ✅ Primary LLM
+      const result = await chatModel.generateContent(fullPrompt);
+      const responseText = result.response.text();
+
+      return new Response(JSON.stringify({ output: responseText }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" },
+      });
+    } catch (error) {
+      console.error("Gemini API Error:", error);
+
+      // ✅ Static fallback if quota exceeded
+      if (
+        error.status === 429 ||
+        error.message.includes("429") ||
+        error.toString().includes("Too Many Requests")
+      ) {
+        return new Response(
+          JSON.stringify({
+            output:
+              "⚠️ Your AI quota is finished for today. Please try again tomorrow.",
+          }),
+          { status: 200, headers: { "Content-Type": "application/json" } }
+        );
+      }
+
+      // ✅ Other errors
+      return new Response(
+        JSON.stringify({
+          output: "⚠️ Unable to process your request. Please try again later.",
+        }),
+        { status: 500, headers: { "Content-Type": "application/json" } }
+      );
+    }
   } catch (error) {
     console.error("❌ Chat API error:", error);
-    return new Response("Internal Server Error", { status: 500 });
+    return new Response(
+      JSON.stringify({ output: "Server error. Please try again later." }),
+      { status: 500, headers: { "Content-Type": "application/json" } }
+    );
   }
 }
