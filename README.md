@@ -1,36 +1,123 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🤖 Karthickeyan's AI Agent — The Intelligent Next.js Assistant
 
-## Getting Started
+<p align="center">
+  <img src="public/HomeScreen.png" alt="AI Agent Banner" width="100%" />
+</p>
 
-First, run the development server:
+<div style="margin-top:2px">
+  <img src="https://img.shields.io/badge/-Next.js_15-black?style=for-the-badge&logo=next.js&logoColor=white&color=000000" alt="Next.js" />
+  <img src="https://img.shields.io/badge/-React_19-black?style=for-the-badge&logo=react&logoColor=white&color=61DAFB" alt="React.js" />
+  <img src="https://img.shields.io/badge/-TailwindCSS_4-black?style=for-the-badge&logo=tailwindcss&logoColor=white&color=38BDF8" alt="Tailwind CSS" />
+  <img src="https://img.shields.io/badge/-LangChain-black?style=for-the-badge&logo=openai&logoColor=white&color=00A67E" alt="LangChain" />
+  <img src="https://img.shields.io/badge/-OpenAI-black?style=for-the-badge&logo=openai&logoColor=white&color=412991" alt="OpenAI" />
+  <img src="https://img.shields.io/badge/-Google_Generative_AI-black?style=for-the-badge&logo=google&logoColor=white&color=EA4335" alt="Google Generative AI" />
+</div>
+
+<div align="center">
+  <p>
+Karthickeyan's AI Agent is a modern, AI-driven portfolio assistant built with <strong>Next.js</strong>, integrating <strong>LangChain</strong>, <strong>OpenAI</strong>, and <strong>Google Generative AI</strong> for intelligent conversations, content generation, and dynamic UI rendering.
+  </p>
+  <p><a href="https://your-live-demo-link" target="_blank"><strong>Live Demo</strong></a></p>
+</div>
+
+---
+
+## 📋 Table of Contents
+
+1. [Introduction](#-introduction)
+2. [Tech Stack](#-tech-stack)
+3. [Features](#-features)
+4. [Quick Start](#-quick-start)
+5. [Installation](#-installation)
+6. [Environment Variables](#-environment-variables)
+7. [License](#-license)
+8. [Acknowledgements](#-acknowledgements)
+
+---
+
+### 🚀 Introduction
+
+**Karthickeyan’s AI Agent** is an intelligent portfolio project powered by **Next.js 15** with cutting-edge AI capabilities using **LangChain**, **OpenAI**, and **Google Generative AI**.  
+This project demonstrates how AI can enhance user interaction, generate contextual responses, and support markdown rendering for a modern web experience.
+
+---
+
+### 🔧 Tech Stack
+
+- ⚛ **React 19** — Latest React with concurrent rendering
+- ▲ **Next.js 15** — App Router, API routes & Turbopack
+- 🌈 **Tailwind CSS 4** — Utility-first responsive design
+- 🧠 **LangChain** — Advanced prompt orchestration & memory
+- 🤖 **OpenAI SDK** — GPT-powered natural language generation
+- 🧩 **Google Generative AI** — Multi-modal AI capabilities
+- 📝 **React Markdown + Remark GFM + Rehype Highlight** — Rich text rendering with code highlighting
+
+---
+
+## ⚙ Features
+
+- 🤖 Conversational AI using **LangChain + OpenAI**
+- 🔗 Integration with **Google Generative AI**
+- 📝 Markdown support with syntax highlighting
+- ⚡ Optimized performance with **Next.js App Router & Turbopack**
+- 🎨 Responsive UI powered by **TailwindCSS 4**
+- 🛠 Modular, production-ready architecture
+
+---
+
+## ⚡ Quick Start
+
+### 📦 Prerequisites
+
+- Node.js ≥ 18
+- npm / yarn / pnpm
+
+---
+
+## 🛠️ Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/portfolio_agent.git
+cd portfolio_agent
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run production build:
 
-## Learn More
+```bash
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+🔑 Environment Variables
+Create a .env.local file in your project root and add the following:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+GOOGLE_API_KEY=your_google_ai_api_key
+ASTRA_DB_APPLICATION_TOKEN=your_astra_token
+ASTRA_DB_ENDPOINT=your_astra_endpoint
+ASTRA_DB_NAMESPACE=default_keyspace
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+🪪 License
+This project is licensed under the MIT License.
 
-## Deploy on Vercel
+## Acknowledgements
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js
+- LangChain
+- OpenAI
+- Google Generative AI
+- Tailwind CSS-
+- React Markdown

@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "info": "Full Name",
+    "description": "Karthikeyan R (Preferred Name: Karthickramalagar)"
+  },
+  {
+    "id": 2,
+    "info": "Personal Details",
+    "description": "21 years old, born on 21st September 2003 (Sunday, 6:40 AM) in Madurai, Tamil Nadu"
+  },
+  {
+    "id": 3,
+    "info": "Contact",
+    "description": "Email: karthickramalagar@gmail.com | Phone: +91 9360600425 | Address: 5/764-S, Jananninagar, Othaveedu, Near PKM House, Madurai - 625020"
+  },
+  {
+    "id": 4,
+    "info": "Education",
+    "description": "Completed schooling at Annamalaiyaar Matriculation Higher Secondary School, Madurai. Scored 90.1% in SSLC and 91.3% in HSC (Computer-Mathematics Group). Qualified JEE Mains. Completed B.E in Electrical and Electronics Engineering at Velammal Engineering College, Chennai with 9.1 CGPA."
+  },
+  {
+    "id": 5,
+    "info": "College Activities",
+    "description": "Attended conferences, hackathons, webinars, and workshops at SSN, NIT Trichy, IIT Madras, Chennai Institute of Technology, Rajalakshmi Engineering College, and Anna University (CEG Campus)."
+  },
+  {
+    "id": 6,
+    "info": "Technical Skills",
+    "description": "Frontend Development (React.js, Tailwind CSS, React Hook Form, Redux, Zod, React Router, GSAP), Backend as a Service (Supabase, Appwrite, Clerk Authentication), Web Animations, and API integrations."
+  },
+  {
+    "id": 7,
+    "info": "Projects",
+    "description": "1. Battery Management System with IoT integration (Digital Twin, ESP32, sensors) [Demo](https://karthickramalagar.github.io/BrainWave/) | [GitHub](https://github.com/KarthickRamAlagar/BrainWave)\n2. Hirrd – Hiring Platform using React & BaaS [Demo](https://hirrdv1.vercel.app/) | [GitHub](https://github.com/KarthickRamAlagar/Hirred)\n3. Zentry – Animated SaaS Landing Page [Demo](https://karthickramalagar.github.io/Zentry/) | [GitHub](https://github.com/KarthickRamAlagar/Zentry)"
+  },
+  {
+    "id": 8,
+    "info": "Social Profiles",
+    "description": "GitHub: https://github.com/KarthickRamAlagar | LinkedIn: https://www.linkedin.com/in/karthickeyan-ramalagar-763404370/"
+  },
+  {
+    "id": 9,
+    "info": "Hobbies",
+    "description": "Playing cricket, exploring latest technologies, building web projects, and self-improvement for tech career."
+  },
+  {
+    "id": 10,
+    "info": "Strengths",
+    "description": "Confidence in completing goals, passion for frontend technologies, continuous exploration in React and UI/UX."
+  },
+  {
+    "id": 11,
+    "info": "Weakness",
+    "description": "Sticking to one goal without exploring multiple domains (though focused on frontend growth)."
+  },
+  {
+    "id": 12,
+    "info": "Future Goals",
+    "description": "Become a skilled Frontend Engineer / Frontend Architect, create innovative software products, and build an AI-powered travel agent platform eliminating intermediaries."
+  },
+  {
+    "id": 13,
+    "info": "Family Background",
+    "description": "Father: Renagaraj (Professor in Commerce), Mother: Nagalakshmi (Homemaker), Sister: Subasri Komal Gowri (B.Ed in Physics)"
+  }
+]

@@ -1,4 +1,7 @@
 @import "tailwindcss";
+[data-nextjs-dev-overlay] {
+  display: none !important;
+}
 
 :root {
   --background: #ffffff;
