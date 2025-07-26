@@ -13,13 +13,16 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "KarthickRamAlagar's AI_Driven_Portfolio",
   description: "AN AI Agent  instead of Me to answer any thing about me!",
+  icons: {
+    icon: "/favicon.png",
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/K1.png" />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
